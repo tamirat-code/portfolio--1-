@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-card-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg text-ink;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-primary/30 text-white;
+  }
+
+  :focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0f172a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2a3b54;
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3b82f6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .section-eyebrow {
+    @apply font-mono text-sm text-primary-400 tracking-wide mb-3 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-500/10 border border-primary-500/25;
+  }
+
+  .section-title {
+    @apply text-3xl sm:text-4xl font-display font-semibold text-ink mb-4 tracking-tight;
+  }
+
+  .section-subtitle {
+    @apply text-ink-muted max-w-2xl leading-relaxed;
+  }
+
+  .container-base {
+    @apply max-w-6xl mx-auto px-6 sm:px-8;
+  }
+
+  .card-base {
+    @apply bg-card border border-card-border rounded-2xl transition-colors duration-300;
+  }
+
+  .text-gradient {
+    @apply bg-text-gradient bg-sheen bg-clip-text text-transparent animate-sheen;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-accent-gradient text-white font-semibold px-6 py-3 shadow-lg shadow-primary-900/40 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary-900/50 active:translate-y-0 focus-visible:outline-primary-300;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-card-border bg-card/60 backdrop-blur text-ink font-semibold px-6 py-3 transition-all duration-300 hover:border-primary-500 hover:bg-card-hover hover:-translate-y-0.5;
+  }
+
+  .icon-btn {
+    @apply w-11 h-11 rounded-xl border border-card-border bg-card/50 flex items-center justify-center text-ink-muted transition-all duration-300 hover:text-primary-400 hover:border-primary-500 hover:-translate-y-0.5;
+  }
+
+  .tag-chip {
+    @apply font-mono text-xs px-2.5 py-1 rounded-md bg-primary-500/10 text-primary-300 border border-primary-500/20;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
