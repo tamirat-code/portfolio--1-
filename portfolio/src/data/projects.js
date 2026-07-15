@@ -5,6 +5,7 @@ export const projects = [
     title: 'CollabFlow',
     subtitle: 'Full-stack project management SaaS',
     featured: true,
+     image: '/projects/collabflow.png',
     repo: 'https://github.com/tamirat-code/collabFlow',
     liveUrl: '', 
     tech: ['React', 'Vite', 'Node.js', 'Express', 'MongoDB', 'Socket.io', 'Stripe', 'Cloudinary'],
