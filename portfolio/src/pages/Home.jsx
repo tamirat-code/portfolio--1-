@@ -1,12 +1,14 @@
 import { Hero } from '@/sections/Hero';
+import { About } from '@/sections/About';
 
-const upcomingSections = ['about', 'skills', 'projects', 'experience', 'education', 'services', 'contact'];
+const upcomingSections = ['skills', 'projects', 'experience', 'education', 'services', 'contact'];
+
 
 export function Home() {
   return (
     <>
       <Hero />
-
+      <About />
       {upcomingSections.map((id) => (
         <section
           key={id}

@@ -11,11 +11,12 @@ export function Navbar() {
   const scrolled = useScrollPosition(40);
   const activeId = useActiveSection(navLinks.map((l) => l.href));
 
-  const handleNavigate = (href) => {
-    setOpen(false);
-    scrollToSection(href);
-  };
+   const handleNavigate = (href) => {
 
+ const wasOpen = open;
+ setOpen(false);
+  setTimeout(() => scrollToSection(href), wasOpen ? 220 : 0);
+  };
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${

@@ -1,8 +1,8 @@
 export const profile = {
   name: 'Tamirat',
   initials: 'T',
-  role: 'Computer Science Student & Full-Stack Developer',
-  university: 'University of Gondar',
+    role: 'Full-Stack Developer',
+    university: 'University of Gondar',
   location: 'Ethiopia',
   github: 'https://github.com/tamirat-code',
   email: 'tamneg21@gmail.com', 
@@ -10,14 +10,10 @@ export const profile = {
     primary: ['React', 'Node.js', 'Express', 'MongoDB'],
     secondary: ['Python', 'Django'],
   },
-  roles: [
-    'Full-Stack Developer',
-    'MERN Stack Engineer',
-    'Computer Science Student',
-    'Django Developer',
-  ],
+ roles: ['Full-Stack Developer', 'MERN Stack Engineer', 'Django Developer', 'Problem Solver'],
   tagline:
-    "I'm a Computer Science student at the University of Gondar and a full-stack developer working in the MERN stack, with Python and Django in the mix. I build real, production-shaped projects — SaaS tools, dashboards, booking systems — and I'm working toward junior full-stack roles now, and a software startup for the Ethiopian market longer-term.",
+        "I'm a full-stack developer working in the MERN stack, with Python and Django in the mix. I build real, production-shaped projects — SaaS tools, dashboards, booking systems — and I'm working toward junior full-stack roles now, and a software startup for the Ethiopian market longer-term.",
+
   goal:
     'Building a portfolio for junior/entry-level full-stack roles, and longer-term, a software startup targeting the Ethiopian market.',
 };
