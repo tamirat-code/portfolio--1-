@@ -7,7 +7,7 @@ export const projects = [
     featured: true,
      image: '/projects/collabflow.png',
     repo: 'https://github.com/tamirat-code/collabFlow',
-    liveUrl: '', 
+    liveUrl: 'https://collab-flow-kappa.vercel.app/', 
     tech: ['React', 'Vite', 'Node.js', 'Express', 'MongoDB', 'Socket.io', 'Stripe', 'Cloudinary'],
     description:
       'Flagship project: a real-time project management SaaS with tiered billing, live collaboration, and AI-assisted task tooling.',
