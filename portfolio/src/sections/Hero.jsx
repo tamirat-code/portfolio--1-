@@ -120,7 +120,7 @@ export function Hero() {
           </motion.p>
 
           <motion.div variants={slideUpSmall} className="mt-9 flex flex-wrap gap-3.5">
-            <a href="/resume.pdf" download className="btn-primary">
+            <a href="/tamirat-beyene-resume.pdf" download className="btn-primary">
               <FiDownload />
               Download résumé
             </a>
