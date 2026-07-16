@@ -3,7 +3,7 @@ import { About } from '@/sections/About';
 import { Skills } from '@/sections/Skills';
 import { Projects } from '@/sections/Projects';
 
-const upcomingSections = [  'experience', 'education', 'services', 'contact'];
+const upcomingSections = [ 'education', 'services', 'contact'];
 
 
 export function Home() {
