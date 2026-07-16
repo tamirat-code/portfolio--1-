@@ -7,7 +7,7 @@ import { slideInLeft, slideInRight, sectionViewport } from '@/utils/motionVarian
 
 const contactSocials = [
   { label: 'GitHub', href: profile.github, icon: FiGithub },
-  { label: 'LinkedIn', href: '#', icon: FiLinkedin },
+  { label: 'LinkedIn', href: 'https://linkedin.com/in/tamneg', icon: FiLinkedin },
   { label: 'Twitter', href: '#', icon: FiTwitter },
 ];
 

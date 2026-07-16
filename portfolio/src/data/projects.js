@@ -38,6 +38,7 @@ export const projects = [
     title: 'Rose Hotel',
     subtitle: 'Full-stack hotel management system',
     featured: true,
+    image: '/projects/rose-hotel.png',
     repo: '',
     liveUrl: '',
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Stripe', 'Recharts', 'React Router v6', 'Axios'],

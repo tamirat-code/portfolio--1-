@@ -8,7 +8,7 @@ import { profile, heroCodeLines } from '@/data/profile';
 
 const SOCIALS = [
   { label: 'GitHub', href: profile.github, icon: FiGithub },
-  { label: 'LinkedIn', href: '#', icon: FiLinkedin },
+  { label: 'LinkedIn', href: 'https://linkedin.com/in/tamneg', icon: FiLinkedin },
   { label: 'Twitter', href: '#', icon: FiTwitter },
   { label: 'Email', href: `mailto:${profile.email}`, icon: FiMail },
 ];
