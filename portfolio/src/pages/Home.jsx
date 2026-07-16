@@ -3,8 +3,9 @@ import { About } from '@/sections/About';
 import { Skills } from '@/sections/Skills';
 import { Projects } from '@/sections/Projects';
 import { Education } from '@/sections/Education';
+import { Services } from '@/sections/Services';
 
-const upcomingSections = ['services', 'contact'];
+const upcomingSections = ['contact'];
 
 
 export function Home() {
@@ -13,8 +14,9 @@ export function Home() {
       <Hero />
       <About />
       <Skills />
-       <Projects />
+      <Projects />
       <Education />
+      <Services />
       {upcomingSections.map((id) => (
         <section
           key={id}
