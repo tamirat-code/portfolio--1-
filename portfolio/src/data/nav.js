@@ -2,6 +2,7 @@ import { FiGithub, FiLinkedin, FiTwitter, FiMail } from 'react-icons/fi';
 import { profile } from '@/data/profile';
 
 export const navLinks = [
+ {label: 'Home', href: 'hero' },
   { label: 'About', href: 'about' },
   { label: 'Skills', href: 'skills' },
   { label: 'Projects', href: 'projects' },

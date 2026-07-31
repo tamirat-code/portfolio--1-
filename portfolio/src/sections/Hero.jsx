@@ -58,11 +58,15 @@ function CodeWindow() {
         </div>
 
 
-        <div className="absolute -bottom-5 -right-3.5 w-[74px] h-[74px] rounded-full bg-accent-gradient p-[3px] shadow-[0_12px_28px_-6px_rgba(59,130,246,0.6)]">
-          <div className="w-full h-full rounded-full bg-bg-soft flex items-center justify-center font-display font-bold text-xl text-ink">
-            {profile.initials}
-          </div>
+        <div className="absolute -bottom-10 -right-8 w-[150px] h-[150px] rounded-full bg-accent-gradient p-[4px] shadow-[0_16px_40px_-8px_rgba(59,130,246,0.65)]">
+         <div className="w-full h-full rounded-full ring-4 ring-bg overflow-hidden">
+           <img
+             src="/profile.png"
+              alt="Tamirat Beyene"
+             className="w-full h-full object-cover object-top"
+          />
         </div>
+      </div>
       </motion.div>
     </motion.div>
   );
