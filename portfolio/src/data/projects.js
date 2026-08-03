@@ -39,8 +39,8 @@ export const projects = [
     subtitle: 'Full-stack hotel management system',
     featured: true,
     image: '/projects/rose-hotel.png',
-    repo: '',
-    liveUrl: '',
+    repo: 'https://github.com/tamirat-code/hotel',
+    liveUrl: 'https://hotel-fbdy.vercel.app/',
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Stripe', 'Recharts', 'React Router v6', 'Axios'],
     description:
       'MERN hotel management system covering booking, payments, and admin operations end to end.',
