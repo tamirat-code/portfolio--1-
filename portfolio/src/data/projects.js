@@ -1,6 +1,41 @@
 
 export const projects = [
   {
+    id: 'nexuswork',
+    title: 'NexusWork',
+    subtitle: 'Student Freelance & Career Development Platform',
+    featured: true,
+    repo: 'https://github.com/tamirat-code/nexuswork',
+    liveUrl: 'https://nexuswork-frontend-murex.vercel.app/',
+    image: '/projects/nexuswork.png',
+    tech: [
+      'React',
+      'Vite',
+      'Tailwind CSS',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'Socket.IO',
+      'WebRTC',
+      'JWT',
+      'Backblaze B2',
+      'S3-compatible storage',
+      'Chapa',
+      'Stripe',
+      'Vercel',
+      'Render',
+    ],
+    description:
+      'NexusWork is a student-focused freelance marketplace and career development platform that connects verified university students with clients, organizations, and employers. It enables students to showcase their skills, find freelance opportunities, collaborate on projects, and gain practical work experience.',
+    features: [
+      'Student verification tied to university identity',
+      'Freelance marketplace connecting students with clients and organizations',
+      'GitHub and GitLab integration to track project contributions and work evidence',
+      'Real-time meetings, communication, and collaborative project workflows',
+      'Payment infrastructure supporting Stripe and Chapa',
+    ],
+  },
+  {
     id: 'collabflow',
     title: 'CollabFlow',
     subtitle: 'Full-stack project management SaaS',
