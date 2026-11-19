@@ -19,6 +19,14 @@ npm run build
 npm run preview
 ```
 
+## Contact form
+
+The contact form submits messages through FormSubmit to the email address in
+`src/data/profile.js`. On the first submission, FormSubmit sends a confirmation
+email to that address; confirm it before expecting messages to be delivered.
+FormSubmit processes the submitted contact details, so update the form provider
+and privacy notice if your deployment requires a different data-handling setup.
+
 ## Project structure
 
 ```

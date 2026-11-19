@@ -15,22 +15,45 @@ const initialForm = { name: '', email: '', subject: '', message: '' };
 
 export function Contact() {
   const [form, setForm] = useState(initialForm);
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState('idle');
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    if (status === 'error') setStatus('idle');
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const subject = form.subject || `Portfolio contact from ${form.name}`;
-    const body = `${form.message}\n\n— ${form.name} (${form.email})`;
-    window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
-    setSent(true);
-    setForm(initialForm);
-    setTimeout(() => setSent(false), 4000);
+    const honeypot = e.currentTarget.elements.namedItem('_honey')?.value ?? '';
+    setStatus('sending');
+
+    try {
+      const response = await window.fetch(`https://formsubmit.co/ajax/${profile.email}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          _replyto: form.email,
+          _subject: form.subject || `Portfolio contact from ${form.name}`,
+          message: form.message,
+          _honey: honeypot,
+        }),
+      });
+      const result = await response.json();
+
+      if (!response.ok || result.success !== 'true') {
+        throw new Error('Message delivery failed');
+      }
+
+      setStatus('success');
+      setForm(initialForm);
+    } catch {
+      setStatus('error');
+    }
   };
 
   return (
@@ -95,8 +118,10 @@ export function Contact() {
           viewport={sectionViewport}
           variants={slideInRight}
           onSubmit={handleSubmit}
+          aria-busy={status === 'sending'}
           className="card-base p-6 sm:p-8 flex flex-col gap-5"
         >
+          <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
           <div className="grid sm:grid-cols-2 gap-5">
             <div>
               <label htmlFor="name" className="block text-xs font-mono text-ink-faint mb-2">
@@ -161,10 +186,14 @@ export function Contact() {
             />
           </div>
 
-          <button type="submit" className="btn-primary self-start mt-1">
-            {sent ? (
+          <button type="submit" disabled={status === 'sending'} className="btn-primary self-start mt-1 disabled:cursor-not-allowed disabled:opacity-60">
+            {status === 'sending' ? (
               <>
-                <FiCheck /> Opening your email app...
+                <FiSend /> Sending...
+              </>
+            ) : status === 'success' ? (
+              <>
+                <FiCheck /> Message sent
               </>
             ) : (
               <>
@@ -172,6 +201,20 @@ export function Contact() {
               </>
             )}
           </button>
+          {status === 'success' && (
+            <p role="status" className="text-sm text-emerald-400">
+              Thanks for reaching out. Your message was delivered.
+            </p>
+          )}
+          {status === 'error' && (
+            <p role="alert" className="text-sm text-red-400">
+              We couldn&apos;t send your message. Please email{' '}
+              <a className="underline" href={`mailto:${profile.email}`}>
+                {profile.email}
+              </a>{' '}
+              directly.
+            </p>
+          )}
         </motion.form>
       </div>
     </Section>
